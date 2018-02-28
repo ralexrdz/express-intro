@@ -13,7 +13,7 @@ Web apps
 - Router for HTTP METHODS and URLS
 - Template HTML
   - Jade
-  - [Handlebars](https://handlebarsjs.com/) 
+  - [Handlebars](https://handlebarsjs.com/)
   - Pug
 
 ### Install
@@ -90,3 +90,11 @@ Features
 ### Mongooose with Express
 
 - Using MVC framework
+
+
+
+
+- tabla de usuarios
+- pagina de detalle de usuarios
+- pagina login
+- pagina de detalle de usuarios con posibilidad de edición cuando se tiene sesión
