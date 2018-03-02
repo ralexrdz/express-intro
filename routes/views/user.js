@@ -11,4 +11,10 @@ module.exports = function (app) {
       res.render('users', {users})
     })
   })
+  app.get('/register', (req, res) => {
+    res.render('registro', {})
+  })
+  app.get('/login', (req, res) => {
+    res.render('login', {})
+  })
 }

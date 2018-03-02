@@ -93,8 +93,8 @@ Features
 
 
 
-
-- tabla de usuarios
-- pagina de detalle de usuarios
-- pagina login
-- pagina de detalle de usuarios con posibilidad de edición cuando se tiene sesión
+[x] tabla de usuarios
+[ ] pagina registro de usuario
+[ ] pagina de detalle de usuario
+[ ] pagina login
+[ ] pagina de detalle de usuarios con posibilidad de edición cuando se tiene sesión

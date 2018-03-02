@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 var UserModel = require('../models/user')
 
 function findByName (req, res, next) {
@@ -36,11 +37,24 @@ function remove (req, res, next) {
     res.remove()
   })
 }
+function login (req, res, next) {
+  UserModel.findOne({email: req.body.email}, function (err, user) {
+    if (err) console.log(err)
+    if (user) {
+      bcrypt.compare(req.body.password, user.password, (err, valid) => {
+        if (err) console.log(err)
+        if (valid ) res.send(user)
+        else res.sendStatus(401)
+      })
+    } else res.sendStatus(401)
+  })
+}
 
 module.exports = {
   findByName,
   findAll,
   create,
   update,
-  remove
+  remove,
+  login
 }
