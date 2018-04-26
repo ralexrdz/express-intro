@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 var UserModel = require('../models/user')
 
 function findByName (req, res, next) {
@@ -43,7 +44,12 @@ function login (req, res, next) {
     if (user) {
       bcrypt.compare(req.body.password, user.password, (err, valid) => {
         if (err) console.log(err)
-        if (valid ) res.send(user)
+        if (valid) {
+          jwt.sign({user}, process.env.JWT_KEY, (err, token) => {
+            if (err) console.log(err)
+            return res.json({token})
+          })
+        }
         else res.sendStatus(401)
       })
     } else res.sendStatus(401)

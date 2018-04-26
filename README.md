@@ -71,7 +71,22 @@ Extra Plugins
 ```
 - #### DELETE
 
-### REST API
+### REST API (_REpresentational State Transfer_)
+
+Es un estilo de arquitectura para servicios APIs basado en restricciones que permiten uniformidad y predectibilidad
+
+- **Uniform Interface** Describe la interfaz entre cliente y servidor.
+  - Basado en recursos. Cada recurso usa URIs como identificadores
+  - Manipulación de recursos via representaciones. El cliente tiene suficiente información para modificar o borrar
+  - Mensajess auto-descritos. Tiene información suficiente para procesar el Mensajes
+  - Hypermedios como motor del estado de la aplicación.
+- **Sin Estado** El estado requerido para manejar las solicitudes está en la misma solicitud.
+  - En el _body_, los paramentros del _query_, o los headers
+  - El cliente debe incluir en las solicitudes toda la información necesaria para procesar la información
+  - El servidor no mantendra un "estado" para saber si debe o no procesar cierta solicitud
+- **Cacheable** Prevenir el uso de interacciones innecesarias, permitiendo escalamiento y mejor rendimiento
+- **Sistema de Capas** El cliente y el servidor deberán poderse desarrolla de manera independiente
+  - El servidor podrá esclarse y balancear las cargas sin que el cliente necesite de información extra
 
 
 ### [Express Generator](https://expressjs.com/en/starter/generator.html)

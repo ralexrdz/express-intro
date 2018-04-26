@@ -1,5 +1,11 @@
-{{#each users}}
-  <div>
-    {{name}}
-  </div>
-{{/each}}
+Usuarios
+{{#if useres.length}}
+  {{#each users}}
+    <div>
+      {{name}}
+    </div>
+  {{/each}}
+{{/if}}
+{{#else}}
+  No hay Usuarios
+{{/else}}
